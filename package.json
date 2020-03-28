@@ -4,6 +4,8 @@
   "description": "start/stop minecraft instance from discord.",
   "main": "app.js",
   "scripts": {
+    "start": "pm2 start pm2.yml",
+    "stop": "pm2 stop pm2.yml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/yukimi-summer/mc-launcher-bot#readme",
   "dependencies": {
-    "discord.js": "^12.1.1"
+    "discord.js": "^12.1.1",
+    "pm2": "^4.2.3"
   }
 }

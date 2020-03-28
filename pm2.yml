@@ -1,0 +1,4 @@
+name: mc-launcher-bot
+script: app.js
+watch: true
+log-date-format: "YYYY-MM-DD HH:mm Z"
