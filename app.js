@@ -1,5 +1,6 @@
 /* app.js */
 const express = require('express');
+const request = require('request-promise');
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
@@ -24,6 +25,23 @@ client.on('message', message => {
         mainChannel = message.channel;
         message.reply('初期化が完了しました')
             .then(message => console.log(`Sent message: ${replyText}`))
+            .catch(console.error);
+    }
+
+    if (message.content === '/mc status') {
+        message.reply('ステータスを確認しています。')
+            .then(message => request({
+                    url: 'https://api.mcsrvstat.us/2/mc.yukimiworks.net',
+                    method: 'get',
+                    json: true
+            }))
+            .then(body => {
+                if (body.online) {
+                    return message.reply('現在オンラインです。');
+                } else {
+                    return message.reply('現在オフラインです。');
+                }
+            })
             .catch(console.error);
     }
 });
