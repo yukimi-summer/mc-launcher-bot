@@ -4,8 +4,8 @@
   "description": "start/stop minecraft instance from discord.",
   "main": "app.js",
   "scripts": {
-    "start": "pm2 start pm2.yml",
-    "stop": "pm2 stop pm2.yml",
+    "start:dev": "node -r dotenv/config app.js",
+    "start": "pm2-runtime pm2.yml --env production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +21,8 @@
   "dependencies": {
     "discord.js": "^12.1.1",
     "pm2": "^4.2.3"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }
