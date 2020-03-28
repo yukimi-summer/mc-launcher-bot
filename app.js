@@ -1,8 +1,10 @@
 /* app.js */
+const express = require('express');
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
 const token = process.env.TOKEN;
+const PORT = process.env.PORT || 3000;
 
 process.on("SIGTERM", () => {
     console.log("Got SIGTERM.");
@@ -27,3 +29,8 @@ client.on('message', message => {
 });
 
 client.login(token);
+
+// Heroku
+express()
+    .get('/', (req, res) => res.send({message: 'Healthy.'}))
+    .listen(PORT, () => console.log(`Listening on ${ PORT }`));
