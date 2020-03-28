@@ -1,0 +1,22 @@
+{
+  "name": "mc-launcher-bot",
+  "version": "1.0.0",
+  "description": "start/stop minecraft instance from discord.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yukimi-summer/mc-launcher-bot.git"
+  },
+  "author": "yukimi-summer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yukimi-summer/mc-launcher-bot/issues"
+  },
+  "homepage": "https://github.com/yukimi-summer/mc-launcher-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.1.1"
+  }
+}
